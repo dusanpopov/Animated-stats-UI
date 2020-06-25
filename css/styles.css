@@ -1,0 +1,88 @@
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+body{
+    background-color: #3f3434;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+h1{
+    margin-left: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 59.5rem;
+    height: 43.4rem;
+    background-color: #493e3e;
+    padding: 6rem;
+    border-radius: .5rem;
+    box-shadow: 0 1.7rem 3.1rem -1.6rem #382929;
+}
+
+.stats{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.stats__percentage, .stats__age{
+    font-size: 1.8rem;
+}
+
+.stats__bar{
+    width: 6.7rem;
+    height: 15.8rem;
+    background-color: #d5634e;
+    border-radius: .4rem;
+    overflow: hidden;
+    margin: 1rem 0;
+    position: relative;
+}
+
+.stats__bar::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #433737;
+    animation: barsIn 1.5s ease-in-out forwards;
+}
+
+.stats__item{
+    text-align: center;
+}
+
+.stats__lower-text{
+    display: block;
+    text-align: center;
+    margin-top: 5rem;
+    opacity: 0.5;
+    letter-spacing: 0.5px;
+    font-size: 2rem;
+}
+
+@keyframes barsIn {
+    0%{
+        bottom: 0;
+    }
+
+    100%{
+        bottom: var(--percentage);
+    }
+}
